@@ -37,7 +37,7 @@ naziv varchar(50) not null
 );
 
 alter table muzej add foreign key (izlozba) references izlozba(sifra);
-alter table izlozba add foreign key (djela) references djela(sifra);
+alter table izlozba add foreign key (djela) references djelo(sifra);
 alter table kustos add foreign key (izlozba) references izlozba(sifra);
 alter table izlozba add foreign key (sponzor) references sponzor(sifra);
 
