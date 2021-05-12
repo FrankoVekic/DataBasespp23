@@ -16,16 +16,16 @@ djela int,
 sponzor int
 );
 
-create table djela(
+create table djelo(
 sifra int not null primary key auto_increment,
 naziv varchar(50),
-godina varchar(50)
+godina date
 );
 
 create table kustos(
 sifra int not null primary key auto_increment,
-ime varchar(50),
-prezime varchar(50),
+ime varchar(50) not null,
+prezime varchar(50) not null,
 oib varchar(11),
 iban varchar(32),
 izlozba int
@@ -33,9 +33,8 @@ izlozba int
 
 create table sponzor(
 sifra int not null primary key auto_increment,
-naziv varchar(50)
+naziv varchar(50) not null
 );
-
 
 alter table muzej add foreign key (izlozba) references izlozba(sifra);
 alter table izlozba add foreign key (djela) references djela(sifra);
