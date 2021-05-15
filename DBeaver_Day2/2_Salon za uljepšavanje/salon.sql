@@ -5,8 +5,7 @@ use salon;
 create table salon(
 sifra int not null primary key auto_increment,
 naziv varchar(50) not null,
-adresa varchar(50),
-djelatnica int not null
+adresa varchar(50)
 );
 
 create table osoba(
@@ -19,7 +18,8 @@ create table djelatnica(
 sifra int not null primary key auto_increment,
 osoba int not null,
 oib varchar(11),
-iban varchar(32)
+iban varchar(32),
+salon int
 );
 
 create table korisnik(
@@ -40,7 +40,7 @@ djelatnica int not null,
 usluga int not null
 );
 
-alter table salon add foreign key (djelatnica) references djelatnica(sifra);
+ALTER TABLE djelatnica ADD FOREIGN KEY (salon) REFERENCES salon(sifra);
 alter table djelatnica add foreign key (osoba) references osoba(sifra);
 alter table korisnik add foreign key (osoba) references osoba(sifra);
 alter table posjet add foreign key (korisnik) references korisnik(sifra);
@@ -73,7 +73,7 @@ insert into posjet (korisnik,djelatnica,usluga) values
 (5,1,1),
 (3,2,3);
 
-insert into salon (naziv,djelatnica) values ('Beauty Salon',1),('Beauty Salon',2);
+insert into salon (naziv) values ('Beauty Salon'),('Beauty Salon');
 
 update salon set naziv='Salon Magic';
 update osoba set ime='Mirela' where sifra=1;
