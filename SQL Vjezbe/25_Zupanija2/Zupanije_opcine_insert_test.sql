@@ -35,6 +35,3 @@ insert into opcina(zupanija,naziv) values
 (3,'Gornji Kneginec'),
 (3,'Jalžabet'),
 (3,'Klenovnik');
-
-
-

@@ -70,5 +70,3 @@ insert into suradnik_obrana (suradnik,obrana) values (1,2),(2,1),(1,1);
 update osoba set ime='Petar' where sifra=1;
 update osoba set prezime='Miloš' where sifra=6;
 delete from suradnik_obrana where suradnik=2;
-
-

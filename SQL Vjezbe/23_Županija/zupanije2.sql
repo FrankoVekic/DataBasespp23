@@ -70,4 +70,3 @@ update grad set naziv ='Skradin' where sifra=8;
 update grad set naziv ='Tribunj' where sifra=6;
 update grad set naziv ='Ilok' where sifra =12;
 delete from opcina where sifra>1;
-

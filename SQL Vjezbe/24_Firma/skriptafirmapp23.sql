@@ -38,6 +38,3 @@ insert into programer (ime,prezime) values
 insert into sudjeluje (projekt,programer) values 
 (2,1),
 (3,2);
-
-
-

@@ -5,8 +5,7 @@ use trgovacki_centar;
 create table trgovacki_centar(
 sifra int not null primary key auto_increment,
 naziv varchar(50) not null,
-adresa varchar(50) not null,
-trgovina int 
+adresa varchar(50) not null
 );
 
 create table osoba (
@@ -19,15 +18,16 @@ oib varchar(11) not null
 
 create table trgovina(
 sifra int not null primary key auto_increment,
-naziv varchar(50),
-prostor int not NULL,
-sef int not null
+naziv varchar(50) not null,
+prostor decimal(18,2) not NULL,
+sef int not null,
+trgovacki_centar int not null
 );
 
 create table sef(
 sifra int not null primary key auto_increment,
 osoba int not null,
-iban varchar(32)
+iban varchar(32) not null
 );
 
 create table radnik(
@@ -40,7 +40,7 @@ radnik int not null,
 trgovina int not null
 );
 
-alter table trgovacki_centar add foreign key (trgovina) references trgovina(sifra);
+alter table trgovina add foreign key (trgovacki_centar) references trgovacki_centar(sifra);
 alter table radnik add foreign key (osoba) references osoba(sifra);
 alter table trgovina add foreign key (sef) references sef(sifra);
 alter table sef add foreign key (osoba) references osoba(sifra);

@@ -14,7 +14,8 @@ CREATE TABLE citanje (
 sifra int NOT NULL PRIMARY KEY auto_increment,
 clan int NOT NULL,
 knjiga int NOT NULL,
-vrijeme_citanja time
+vrijeme_pocetka datetime,
+vrijeme_zavrsetka datetime
 );
 
 CREATE TABLE knjiga(
@@ -56,4 +57,3 @@ insert into citanje (clan,knjiga) values
 update knjiga set naziv='Magic book 2' where sifra=1;
 update clan set ime ='Branko' where sifra =4;
 delete from citanje where sifra>2;
-

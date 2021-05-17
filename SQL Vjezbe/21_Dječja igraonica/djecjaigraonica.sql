@@ -18,7 +18,7 @@ ime_majke varchar(50)
 
 create table teta (
 sifra int not null primary key auto_increment,
-osoba int,
+osoba int not null,
 iban varchar(32) not null
 );
 
@@ -33,7 +33,6 @@ create table igranje(
 skupina int not null,
 djete int not null
 );
-
 
 alter table djete add foreign key (osoba) references osoba(sifra);
 alter table teta add foreign key (osoba) references osoba(sifra);

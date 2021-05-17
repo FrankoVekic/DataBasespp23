@@ -25,25 +25,32 @@ datum_rodenja date not null
 
 create table kvar (
 sifra int not null primary key auto_increment,
-opis_kvara varchar(1000)
+instalacija int not null,
+opis_kvara text not null
 );
 
 create table popravak (
 sifra int not null primary key auto_increment,
 kvar int not null,
 vodoinstalater int not null,
-segrt int,
 cijena decimal (18,2),
 datum_popravka datetime
 );
 
+create table instalacija(
+sifra int not null primary key auto_increment,
+naziv varchar(50) not null
+);
+
 create table posao(
-popravak int,
-kvar int
+popravak int not null,
+kvar int not null,
+segrt int
 );
 alter table posao add foreign key (kvar) references kvar(sifra);
 alter table posao add foreign key (popravak) references popravak(sifra);
-alter table popravak add foreign key (segrt) references segrt(sifra);
+alter table posao add foreign key (segrt) references segrt(sifra);
 alter table popravak add foreign key (vodoinstalater) references vodoinstalater(sifra);
 alter table segrt add foreign key (osoba) references osoba(sifra);
 alter table vodoinstalater add foreign key (osoba) references osoba(sifra);
+alter table kvar add foreign key (instalacija) references instalacija(sifra);
