@@ -1,7 +1,7 @@
 ﻿# Klijent pokrenuti s --default-character-set=utf8 
 drop database if exists knjiznica;
-create database knjiznica DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_general_ci;
-use knjiznica;
+create database knjiznica1 DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_general_ci;
+use knjiznica1;
 CREATE TABLE autor(
    sifra 			int NOT NULL PRIMARY KEY,
    ime			  varchar(50) NOT NULL,

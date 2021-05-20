@@ -30,3 +30,10 @@ delete from customer where customer_id =304;
 delete from payment where customer_id =304;
 #1 izvesti
 delete from rental where customer_id =304;
+
+#Izabrati sve filmove u kojima glumci ne počinju sa slovom 'J'
+select a.title 
+from film a 
+inner join film_actor b on a.film_id =b.film_id 
+inner join actor c on b.actor_id =c.actor_id 
+where c.first_name not like 'J%';
