@@ -1,3 +1,4 @@
+#Kreirajte tablice i veze između tablica. 
 DROP database IF EXISTS kolokvij_vjezba11;
 CREATE database kolokvij_vjezba11;
 use kolokvij_vjezba11;
