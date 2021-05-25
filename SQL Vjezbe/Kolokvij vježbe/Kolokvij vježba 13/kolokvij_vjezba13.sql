@@ -133,5 +133,5 @@ where d.drugiputa is not null and c.ogrlica = 193 order by e.carape desc;
 
 select  a.ogrlica, a.ekstrovertno 
 from svekrva a 
-inner join svekrva_svekar b on a.sifra =b.svekrva 
-where a.sifra not in (b.svekrva);
+left join svekrva_svekar b on b.svekrva = a.sifra 
+where b.svekrva is null;
