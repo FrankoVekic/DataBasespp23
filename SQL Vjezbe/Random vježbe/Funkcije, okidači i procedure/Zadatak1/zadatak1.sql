@@ -86,7 +86,7 @@ select count(*) from zarucnica;
 select count(*) from punac;
 
 #Kreirajte okidač zadatak3 nakon insert-a u tablicu zarucnica tako da za svaki unos u tablicu zarucnica 
-#napravi po dva unosa u tablicu punac (7). Okidač je u funkciji, tablica punac ima dvostruko više zapisa od 
+#napravi po dva unosa u tablicu punac Okidač je u funkciji, tablica punac ima dvostruko više zapisa od 
 #tablice zarucnica 
 
 delimiter $$
