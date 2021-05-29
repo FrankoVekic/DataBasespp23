@@ -72,12 +72,33 @@ create procedure zadatak2()
 begin
 	
 	declare i int default 0;
-		while (i <=56872) do
+		while (i <=56871) do
 		insert into zarucnica(prstena, modelnaocala, nausnica) values(i,' ', i);
 		set i = i+1;
 	end while;
 end;
 $$
+
 delimiter ;
 select * from zarucnica;
+select * from punac;
 select count(*) from zarucnica;
+select count(*) from punac;
+
+#Kreirajte okidač zadatak3 nakon insert-a u tablicu zarucnica tako da za svaki unos u tablicu zarucnica 
+#napravi po dva unosa u tablicu punac (7). Okidač je u funkciji, tablica punac ima dvostruko više zapisa od 
+#tablice zarucnica 
+
+delimiter $$
+
+create trigger unos_zarucnica
+	before insert on
+		zarucnica for each row
+
+	begin 
+		declare i int default 1;
+		insert into punac (novcica) values (i);
+		insert into punac (novcica) values (i);
+		
+	end$$
+delimiter ; 
