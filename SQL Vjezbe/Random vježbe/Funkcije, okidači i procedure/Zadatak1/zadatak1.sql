@@ -111,23 +111,3 @@ insert into neprijateljica (indiferentno,modelnaocala,maraka,kratkamajica) value
 (1,'Sunčane',15.99,'Plava');
 
 delimiter $$
-create procedure sedma_vrijednost ()
-
-begin 
-	
-	declare i int default 1;
-	declare z int default 1;
-		while (z <=16347 ) do #s modulom if 
-		insert into muskarac (maraka,hlace,prstena,neprijateljica) values 
-		(i,' ',i,1);
-	set i = i+7;
-	set z = z+1;
-	
-end while;
-	
-end$$
-	
-delimiter ;
-
-select * from muskarac;
-select count(*) from zarucnica;
