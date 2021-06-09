@@ -38,7 +38,7 @@ narukvica int
 );
 
 create table zarucnica (
-id int not null primary key auto_increment,
+id1 int not null primary key auto_increment,
 stilfrizura varchar(40),
 prstena int not null,
 gustoca decimal(14,5),
@@ -102,3 +102,32 @@ create trigger unos_zarucnica
 		
 	end$$
 delimiter ; 
+
+#Kreirajte proceduru zadatak4 koja iz tablice zarucnica zbraja svaku 7 vrijednost id-a (1,7,14,...). U tablicu 
+#muskarac se unosi broj zapisa koji odgovaraju izračunatoj sumi. Izvesti proceduru jednom tako da u 
+#tablici muskarac bude točan broj zapisa koji odgovaraju sumi odabranih brojeva 
+
+insert into neprijateljica (indiferentno,modelnaocala,maraka,kratkamajica) values 
+(1,'Sunčane',15.99,'Plava');
+
+delimiter $$
+create procedure sedma_vrijednost ()
+
+begin 
+	
+	declare i int default 1;
+	declare z int default 1;
+		while (z <=16347 ) do #s modulom if 
+		insert into muskarac (maraka,hlace,prstena,neprijateljica) values 
+		(i,' ',i,1);
+	set i = i+7;
+	set z = z+1;
+	
+end while;
+	
+end$$
+	
+delimiter ;
+
+select * from muskarac;
+select count(*) from zarucnica;
