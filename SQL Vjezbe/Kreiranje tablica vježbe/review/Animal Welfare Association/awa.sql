@@ -17,7 +17,6 @@ name varchar(30) NOT NULL,
 animal varchar(30) NOT NULL,
 age int,
 animal_space int NOT NULL,
-care int not NULL
 );
 
 CREATE TABLE animal_space (
