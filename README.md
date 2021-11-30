@@ -1,2 +1,0 @@
-# DataBasespp23
-MySQL
